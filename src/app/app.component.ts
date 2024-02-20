@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SignalsService } from './signals.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'signals';
+  
+  constructor(private signalsService: SignalsService) {}
+
+  increment() {
+    this.signalsService.increment();
+  }
+
+  decrement() {
+    this.signalsService.decrement();
+  }
 }
